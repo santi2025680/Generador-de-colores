@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Generador de Colores 🎨</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      flex-direction: column;
+      background-color: #ffffff;
+      transition: background-color 0.5s ease;
+    }
+
+    button {
+      padding: 15px 30px;
+      font-size: 18px;
+      border: none;
+      background-color: #333;
+      color: white;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+
+    button:hover {
+      background-color: #555;
+    }
+
+    #color-code {
+      font-size: 24px;
+      margin-top: 20px;
+      color: #222;
+    }
+  </style>
+</head>
+<body>
+  <h1>🎨 Generador de Colores Aleatorios</h1>
+  <button onclick="generarColor()">Generar Color</button>
+  <div id="color-code">#FFFFFF</div>
+
+  <script>
+    function generarColor() {
+      const randomColor = "#" + Math.floor(Math.random()*16777215).toString(16).padStart(6, '0');
+      document.body.style.backgroundColor = randomColor;
+      document.getElementById("color-code").textContent = randomColor.toUpperCase();
+    }
+  </script>
+</body>
+</html>
